@@ -15,7 +15,7 @@ DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :transaction
 DatabaseCleaner.clean
 
-create_list(:daily_plan, 3)
+create_list(:daily_plan, 8)
 
 puts "*** SUMMARY: ***"
 puts "- #{DailyPlan.count} Daily plans created!"
