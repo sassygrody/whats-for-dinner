@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_030936) do
+ActiveRecord::Schema.define(version: 2022_01_10_045958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 2022_01_10_030936) do
     t.boolean "refrigerated", default: false
     t.boolean "in_kitchen", default: false
     t.integer "item_type", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "food_items_meals", id: false, force: :cascade do |t|
+    t.bigint "food_item_id"
+    t.bigint "meal_id"
+    t.index ["food_item_id"], name: "index_food_items_meals_on_food_item_id"
+    t.index ["meal_id"], name: "index_food_items_meals_on_meal_id"
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.integer "name"
+    t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

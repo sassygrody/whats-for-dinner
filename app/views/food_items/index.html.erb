@@ -7,15 +7,15 @@
           <h4><%= day %></h4>
           <p>Breakfast</p>
           <div class='meal'>
-            <div class='food-item'>protein</div>
-            <div class='food-item'>veg</div>
-            <div class='food-item'>carb</div>
+            <% @meals.first.food_items.each do |food_item| %>
+              <div class='food-item'><%= food_item.name %></div>
+            <% end %>
           </div>
           <p>Lunch</p>
           <div class='meal'>
-            <div class='food-item'>protein</div>
-            <div class='food-item'>veg</div>
-            <div class='food-item'>carb</div>
+            <% @meals.second.food_items.each do |food_item| %>
+              <div class='food-item'><%= food_item.name %></div>
+            <% end %>
           </div>
           <p>Dinner</p>
           <div class='meal'>
