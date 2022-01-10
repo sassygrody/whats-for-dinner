@@ -18,11 +18,11 @@ FactoryBot.define do
     end
 
     trait :carb do
-      item_type { FoodItem.item_types[:ingredient] }
+      item_type { FoodItem.item_types[:carb] }
     end
 
     trait :fat do
-      item_type { FoodItem.item_types[:ingredient] }
+      item_type { FoodItem.item_types[:fat] }
     end
   end
 end
