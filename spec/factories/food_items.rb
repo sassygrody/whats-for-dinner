@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :food_item do
-    name { Faker::Food.vegetables }
+    name { FoodItem.item_types.keys.sample }
+    item_type { name }
     refrigerated { false }
     in_kitchen { false }
-    item_type { FoodItem.item_types[:vegetable] }
 
     trait :veg do
       name { Faker::Food.vegetables }
