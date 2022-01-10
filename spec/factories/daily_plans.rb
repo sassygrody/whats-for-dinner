@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :daily_plan do
-    date { Date.new }
+    sequence(:date) { |n| Date.today + n.days }
     meals do
       [
         create(:meal, :breakfast),
