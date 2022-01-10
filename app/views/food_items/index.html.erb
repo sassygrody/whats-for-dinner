@@ -1,6 +1,6 @@
 <div class='inner-container'>
-  <div class='col'>
-    <h2>Weekly Meals</h2>
+  <section class='col'>
+    <h2 class="subtitle">Weekly Meals</h2>
     <div class='weekly-meals'>
       <% DailyPlan.all.each do |daily_plan|%>
         <div class='day'>
@@ -16,9 +16,9 @@
         </div>
       <% end %>
     </div>
-  </div>
-  <div class="col kitchen">
-    <h2>Kitchen Food Items</h2>
+  </section>
+  <section class="col kitchen">
+    <h2 class="subtitle">Kitchen Food Items</h2>
     <h3>Pantry</h3>
     <div class='pantry'>
       <% @pantry_items.each do |food_item| %>
@@ -31,5 +31,5 @@
         <div class='food-item'><%= food_item.name %><%= fa_icon icon(food_item)%></div>
       <% end %>
     </div>
-  </div>
+  </section>
 </div>
