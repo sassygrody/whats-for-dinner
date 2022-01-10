@@ -1,24 +1,19 @@
-# README
+# What's For Dinner?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Another meal planner app!
 
-Things you may want to cover:
+## Local Setup
 
-* Ruby version
+The usj.
 
-* System dependencies
+```sh
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails db:seed
+```
 
-* Configuration
+## Local Development
 
-* Database creation
+No docker... yet.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `bundle exec rails server`
