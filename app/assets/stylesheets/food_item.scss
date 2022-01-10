@@ -1,3 +1,53 @@
 // Place all the styles related to the FoodItem controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: lighten(blueviolet, 30);
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  .col {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 46%;
+    padding: 20px;
+    overflow: scroll;
+    margin: 20px;
+  }
+
+  .fridge,
+  .pantry,
+  .weekly-meals {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .food-item,
+  .day {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+  }
+
+  .day {
+    min-width: 300px;
+  }
+  .meal {
+    display: flex;
+    gap: 10px;
+  }
+  .food-item {
+    background-color: lighten(blue, 33);
+  }
+}

@@ -2,6 +2,7 @@
 
 class FoodItemsController < ApplicationController
   def index
-    @food_items = FoodItem.all
+    @pantry_items = FoodItem.where(refrigerated: false).order(:name)
+    @fridge_items = FoodItem.where(refrigerated: true).order(:name)
   end
 end

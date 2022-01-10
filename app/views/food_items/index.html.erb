@@ -1,6 +1,45 @@
-<h1>Food items</h1>
-<ul>
-  <% @food_items.each do |food_item| %>
-    <li><%= food_item.name %></li>
-  <% end %>
-</ul>
+<div class='container'>
+  <div class='col'>
+    <h2>Weekly Meals</h2>
+    <div class='weekly-meals'>
+      <% %w[monday tuesday wednesday thursday friday saturday sunday].each do |day|%>
+        <div class='day'>
+          <h4><%= day %></h4>
+          <p>Breakfast</p>
+          <div class='meal'>
+            <div class='food-item'>protein</div>
+            <div class='food-item'>veg</div>
+            <div class='food-item'>carb</div>
+          </div>
+          <p>Lunch</p>
+          <div class='meal'>
+            <div class='food-item'>protein</div>
+            <div class='food-item'>veg</div>
+            <div class='food-item'>carb</div>
+          </div>
+          <p>Dinner</p>
+          <div class='meal'>
+            <div class='food-item'>protein</div>
+            <div class='food-item'>veg</div>
+            <div class='food-item'>fat</div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="col kitchen">
+    <h2>Kitchen Food Items</h2>
+    <h3>Pantry</h3>
+    <div class='pantry'>
+      <% @pantry_items.each do |food_item| %>
+        <div class='food-item'><%= food_item.name %></div>
+      <% end %>
+    </div>
+    <h3>Fridge</h3>
+    <div class='fridge'>
+      <% @fridge_items.each do |food_item| %>
+        <div class='food-item'><%= food_item.name %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

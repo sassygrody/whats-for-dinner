@@ -24,5 +24,9 @@ FactoryBot.define do
     trait :fat do
       item_type { FoodItem.item_types[:fat] }
     end
+
+    trait :fridge do
+      refrigerated { true }
+    end
   end
 end
