@@ -19,14 +19,14 @@
   </section>
   <section class="col kitchen">
     <h2 class="subtitle">Kitchen Food Items</h2>
-    <h3>Pantry</h3>
     <div class='pantry'>
+      <h3>Pantry</h3>
       <% @pantry_items.each do |food_item| %>
         <div class='food-item'><%= food_item.name %><%= fa_icon icon(food_item)%></div>
       <% end %>
     </div>
-    <h3>Fridge</h3>
     <div class='fridge'>
+      <h3>Fridge</h3>
       <% @fridge_items.each do |food_item| %>
         <div class='food-item'><%= food_item.name %><%= fa_icon icon(food_item)%></div>
       <% end %>

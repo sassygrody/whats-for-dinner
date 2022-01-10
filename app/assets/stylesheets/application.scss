@@ -1,8 +1,14 @@
 @import "font-awesome";
 @import "bulma";
+@import "bulma-extended/*";
 @import "controllers/*";
 
+html,
 body {
   margin: 0;
+  padding: 0;
   background-color: lighten($purple, 10);
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
 }
