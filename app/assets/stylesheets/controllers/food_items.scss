@@ -1,15 +1,19 @@
 .inner-container {
   height: 100vh;
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
   padding: 10px 20px;
+
+  &.columns {
+    margin: 0;
+  }
 
   .col {
     background-color: white;
-    width: 45%;
     padding: 20px;
     overflow-y: auto;
     border-radius: 3px;
+    margin: 15px 30px;
   }
 
   .fridge,
