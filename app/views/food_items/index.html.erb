@@ -9,7 +9,9 @@
             <p><%= meal.name %></p>
             <div class='meal'>
               <% meal.food_items.each do |food_item| %>
-                <div class='food-item'><%= food_item.name %><%= fa_icon icon(food_item)%></div>
+                <div class="<%=food_item_class_name(food_item)%>">
+                  <%= food_item.name %><%= fa_icon icon(food_item)%>
+                </div>
               <% end %>
             </div>
           <% end %>
@@ -22,13 +24,17 @@
     <div class='pantry'>
       <h3>Pantry</h3>
       <% @pantry_items.each do |food_item| %>
-        <div class='food-item'><%= food_item.name %><%= fa_icon icon(food_item)%></div>
+        <div class="<%=food_item_class_name(food_item)%>">
+          <%= food_item.name %><%= fa_icon icon(food_item)%>
+        </div>
       <% end %>
     </div>
     <div class='fridge'>
       <h3>Fridge</h3>
       <% @fridge_items.each do |food_item| %>
-        <div class='food-item'><%= food_item.name %><%= fa_icon icon(food_item)%></div>
+        <div class="<%=food_item_class_name(food_item)%>">
+          <%= food_item.name %><%= fa_icon icon(food_item)%>
+        </div>
       <% end %>
     </div>
   </section>
