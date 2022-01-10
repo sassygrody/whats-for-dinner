@@ -4,8 +4,8 @@ FactoryBot.define do
   factory :food_item do
     name { FoodItem.item_types.keys.sample }
     item_type { name }
-    refrigerated { false }
-    in_kitchen { false }
+    refrigerated { [true, false].sample }
+    in_kitchen { [true, false].sample }
 
     trait :veg do
       name { Faker::Food.vegetables }
@@ -27,6 +27,10 @@ FactoryBot.define do
 
     trait :fridge do
       refrigerated { true }
+    end
+
+    trait :in_kitchen do
+      in_kitchen { true }
     end
   end
 end

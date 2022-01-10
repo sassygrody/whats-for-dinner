@@ -17,6 +17,7 @@ gem "webpacker", "~> 4.0"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "database_cleaner-active_record"
   gem "factory_bot_rails"
   gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
   gem "pry", "~> 0.13.1"
