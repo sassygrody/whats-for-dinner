@@ -3,7 +3,7 @@
 class FoodItem < ApplicationRecord
   validates :name, :item_type, presence: true
 
-  enum item_type: %i[protein carb fat vegetable]
+  enum item_type: %i[protein carb fat vegetable other]
 
   has_and_belongs_to_many :meals
 end
