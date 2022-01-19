@@ -1,0 +1,16 @@
+@mixin border {
+  border: 1px solid $grey-light;
+  border-radius: $radius;
+}
+.border {
+  @include border;
+}
+
+@mixin box {
+  @include border;
+  padding: $base-spacing;
+  margin: $small-spacing 0;
+}
+.box {
+  @include box;
+}

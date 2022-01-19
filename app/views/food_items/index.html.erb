@@ -1,20 +1,10 @@
 <div class='inner-container columns'>
   <section class='col column'>
     <h2 class="subtitle">Weekly Meals</h2>
-    <div class='weekly-meals'>
+    <div class='weekly-meals columns'>
       <% DailyPlan.all.each do |daily_plan|%>
-        <div class='day'>
-          <p><%= daily_plan.date.strftime('%A %m/%d/%y') %></p>
-          <% daily_plan.meals.each do |meal|%>
-            <p><%= meal.name %></p>
-            <div class='meal'>
-              <% meal.food_items.each do |food_item| %>
-                <div class="<%=food_item_class_name(food_item)%>">
-                  <%= food_item.name %><%= fa_icon icon(food_item)%>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+        <div class='day column is-6'>
+          <%= render "components/card", daily_plan: daily_plan %>
         </div>
       <% end %>
     </div>
