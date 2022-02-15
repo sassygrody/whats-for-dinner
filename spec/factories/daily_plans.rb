@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :daily_plan do
-    sequence(:date) { |n| Date.today + n.days }
+    sequence(:date) { |n| Date.today + 1 - n.days }
     notes { nil }
 
     trait :with_meals do

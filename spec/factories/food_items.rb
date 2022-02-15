@@ -19,10 +19,12 @@ FactoryBot.define do
 
     trait :carb do
       item_type { FoodItem.item_types[:carb] }
+      name { "carb" }
     end
 
     trait :fat do
       item_type { FoodItem.item_types[:fat] }
+      name { "fat" }
     end
 
     trait :fridge do

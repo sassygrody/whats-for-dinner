@@ -3,7 +3,7 @@
     <h2 class="subtitle">Weekly Meals</h2>
     <div class='weekly-meals columns'>
       <% DailyPlan.all.each do |daily_plan|%>
-        <div class='day column is-6'>
+        <div class='day column is-5'>
           <%= render "components/card", daily_plan: daily_plan %>
         </div>
       <% end %>
