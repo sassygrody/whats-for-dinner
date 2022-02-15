@@ -5,5 +5,6 @@ class FoodItem < ApplicationRecord
 
   enum item_type: %i[protein carb fat vegetable other]
 
-  has_and_belongs_to_many :meals
+  has_many :food_item_meals
+  has_many :meals, through: :food_item_meals
 end

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_054256) do
+ActiveRecord::Schema.define(version: 2022_02_15_031045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_plan_meals", force: :cascade do |t|
+    t.bigint "meal_id"
+    t.bigint "daily_plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daily_plan_id"], name: "index_daily_plan_meals_on_daily_plan_id"
+    t.index ["meal_id"], name: "index_daily_plan_meals_on_meal_id"
+  end
 
   create_table "daily_plans", force: :cascade do |t|
     t.date "date"
@@ -22,11 +31,13 @@ ActiveRecord::Schema.define(version: 2022_01_10_054256) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "daily_plans_meals", id: false, force: :cascade do |t|
+  create_table "food_item_meals", force: :cascade do |t|
+    t.bigint "food_item_id"
     t.bigint "meal_id"
-    t.bigint "daily_plan_id"
-    t.index ["daily_plan_id"], name: "index_daily_plans_meals_on_daily_plan_id"
-    t.index ["meal_id"], name: "index_daily_plans_meals_on_meal_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["food_item_id"], name: "index_food_item_meals_on_food_item_id"
+    t.index ["meal_id"], name: "index_food_item_meals_on_meal_id"
   end
 
   create_table "food_items", force: :cascade do |t|
@@ -36,13 +47,6 @@ ActiveRecord::Schema.define(version: 2022_01_10_054256) do
     t.integer "item_type", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "food_items_meals", id: false, force: :cascade do |t|
-    t.bigint "food_item_id"
-    t.bigint "meal_id"
-    t.index ["food_item_id"], name: "index_food_items_meals_on_food_item_id"
-    t.index ["meal_id"], name: "index_food_items_meals_on_meal_id"
   end
 
   create_table "meals", force: :cascade do |t|

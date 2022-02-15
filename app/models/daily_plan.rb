@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class DailyPlan < ApplicationRecord
-  has_and_belongs_to_many :meals
+  has_many :daily_plan_meals
+  has_many :meals, through: :daily_plan_meals
 end
