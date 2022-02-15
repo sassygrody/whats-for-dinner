@@ -20,8 +20,8 @@ group :development, :test do
   gem "database_cleaner-active_record"
   gem "factory_bot_rails"
   gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
-  gem "pry"
-  gem "pry-byebug"
+  gem "pry", "0.13"
+  gem "pry-byebug", "3.9.0"
   gem "rspec-rails", "~> 5.0.0"
 end
 
