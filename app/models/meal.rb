@@ -6,7 +6,7 @@ class Meal < ApplicationRecord
   has_and_belongs_to_many :food_items
   has_and_belongs_to_many :daily_plans
 
-  scope :breakfast, -> { where(name: "breakfast") }
-  scope :lunch, -> { where(name: "lunch") }
-  scope :dinner, -> { where(name: "dinner") }
+  scope :breakfasts, -> { where(name: names[:breakfast]) }
+  scope :lunches, -> { where(name: names[:lunch]) }
+  scope :dinners, -> { where(name: names[:dinner]) }
 end
