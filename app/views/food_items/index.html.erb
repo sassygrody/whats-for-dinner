@@ -1,9 +1,9 @@
-<div class='inner-container columns'>
-  <section class='col column'>
-    <h2 class="subtitle">Weekly Meals</h2>
-    <div class='weekly-meals columns'>
+<div>
+  <section>
+    <h2 >Weekly Meals</h2>
+    <div>
       <% DailyPlan.all.each do |daily_plan|%>
-        <div class='day column is-5'>
+        <div >
           <%= render "components/card", daily_plan: daily_plan %>
         </div>
       <% end %>

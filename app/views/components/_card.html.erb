@@ -1,14 +1,14 @@
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      <%= daily_plan.date.strftime('%A %m/%d/%y') %>
+<div >
+  <header >
+    <p >
+      <%= daily_plan.date.strftime("%A %m/%d/%y") %>
     </p>
   </header>
-  <div class="card-content">
-    <div class="content">
+  <div >
+    <div >
       <% daily_plan.meals.each do |meal|%>
-        <p class='is-uppercase'><%= meal.name %></p>
-        <div class='meal'>
+        <p class="uppercase"><%= meal.name %></p>
+        <div>
           <% meal.food_items.each do |food_item| %>
             <div class="<%=food_item_class_name(food_item)%>">
               <%= food_item.name %><%= fa_icon icon(food_item)%>

@@ -1,12 +1,11 @@
 @import "font-awesome";
-@import "bulma-extended/*";
 @import "controllers/*";
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: $grey-light;
+  background-color: lightgray;
   height: 100vh;
   width: 100vw;
   overflow: auto;

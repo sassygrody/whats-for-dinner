@@ -9,23 +9,23 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+  <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  <div class="field">
+  <div>
     <%= form.label :item_type %>
     <%= form.select :item_type, options_for_select(FoodItem.item_types.map {|key, value| [key.titleize, FoodItem.item_types.key(value)]}, @food_item.item_type) %>
   </div>
-  <div class="field">
+  <div>
     <%= form.label :refrigerated %>
     <%= form.check_box :refrigerated %>
   </div>
-  <div class="field">
+  <div>
     <%= form.label :in_kitchen %>
     <%= form.check_box :in_kitchen %>
   </div>
-  <div class="actions">
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

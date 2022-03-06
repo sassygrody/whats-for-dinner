@@ -1,9 +1,9 @@
-<section class="col kitchen column is-one-third">
-  <h2 class="subtitle">Kitchen Food Items</h2>
-  <div class='action'>
-    <%= link_to 'New Food', new_food_item_path, class: "button" %>
+<section>
+  <h2>Kitchen Food Items</h2>
+  <div>
+    <%= link_to 'New Food', new_food_item_path %>
   </div>
-  <div class='pantry'>
+  <div>
     <h3>Pantry</h3>
     <% @pantry_items.each do |food_item| %>
       <div class="<%=food_item_class_name(food_item)%>">
@@ -11,7 +11,7 @@
       </div>
     <% end %>
   </div>
-  <div class='fridge'>
+  <div>
     <h3>Fridge</h3>
     <% @fridge_items.each do |food_item| %>
       <div class="<%=food_item_class_name(food_item)%>">
