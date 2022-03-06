@@ -1,22 +1,20 @@
-<section>
-  <h2>Kitchen Food Items</h2>
-  <div>
-    <%= link_to 'New Food', new_food_item_path %>
-  </div>
-  <div>
-    <h3>Pantry</h3>
-    <% @pantry_items.each do |food_item| %>
-      <div class="<%=food_item_class_name(food_item)%>">
-        <%= food_item.name %><%= fa_icon icon(food_item)%>
-      </div>
-    <% end %>
-  </div>
-  <div>
-    <h3>Fridge</h3>
-    <% @fridge_items.each do |food_item| %>
-      <div class="<%=food_item_class_name(food_item)%>">
-        <%= food_item.name %><%= fa_icon icon(food_item)%>
-      </div>
-    <% end %>
-  </div>
-</section>
+<h2>Kitchen Food Items</h2>
+<div>
+  <%= link_to 'New Food', new_food_item_path %>
+</div>
+<div>
+  <h3>Pantry</h3>
+  <% @pantry_items.each do |food_item| %>
+    <div class="<%=food_item_class_name(food_item)%>">
+      <%= food_item.name %><%= fa_icon icon(food_item)%>
+    </div>
+  <% end %>
+</div>
+<div>
+  <h3>Fridge</h3>
+  <% @fridge_items.each do |food_item| %>
+    <div class="<%=food_item_class_name(food_item)%>">
+      <%= food_item.name %><%= fa_icon icon(food_item)%>
+    </div>
+  <% end %>
+</div>

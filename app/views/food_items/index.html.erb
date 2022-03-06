@@ -1,6 +1,6 @@
-<div>
-  <section>
-    <h2 >Weekly Meals</h2>
+<div class='flex justify-around w-full'>
+  <section class='bg-white'>
+    <h2>Weekly Meals</h2>
     <div>
       <% DailyPlan.all.each do |daily_plan|%>
         <div >
@@ -9,5 +9,7 @@
       <% end %>
     </div>
   </section>
-  <%= render "kitchen" %>
+  <section class='bg-white'>
+    <%= render "kitchen" %>
+  </section>
 </div>
