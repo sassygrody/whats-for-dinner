@@ -1,7 +1,9 @@
-<div>
-  <section>
-    <h2 >New Food</h2>
-    <%= render 'form', food_item: @food_item %>
-    <%= link_to 'Back', root_path %>
-  </section>
-</div>
+<%= turbo_frame_tag "modal" do %>
+  <div>
+    <section>
+      <h2 >New Food</h2>
+      <%= render 'form', food_item: @food_item %>
+      <%= link_to 'Back', root_path %>
+    </section>
+  </div>
+<% end %>
