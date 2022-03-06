@@ -1,5 +1,5 @@
 <div class='flex justify-around w-full'>
-  <section class='bg-white'>
+  <section class='bg-white p-4'>
     <h2>Weekly Meals</h2>
     <div>
       <% DailyPlan.all.each do |daily_plan|%>
@@ -9,7 +9,7 @@
       <% end %>
     </div>
   </section>
-  <section class='bg-white'>
+  <section class='bg-white p-4 w-1/3'>
     <%= render "kitchen" %>
   </section>
 </div>
