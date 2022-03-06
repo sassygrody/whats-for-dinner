@@ -19,7 +19,6 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbolinks", "~> 5"
 gem "turbo-rails"
-gem "webpacker", "~> 4.0"
 
 group :development, :test do
   gem "database_cleaner-active_record"
