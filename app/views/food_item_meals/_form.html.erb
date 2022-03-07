@@ -1,0 +1,19 @@
+<%= form_with(url: meal_food_item_meals_path, model: food_item_meal, local: true) do |form| %>
+  <% if food_item_meal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(food_item_meal.errors.count, "error") %> prohibited this food_item_meal from being saved:</h2>
+      <ul>
+        <% food_item_meal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.collection_select(:food_item_id, FoodItem.all, :id, :name) %>
+    <%= form.hidden_field(:meal_id, value: params[:meal_id]) %>
+  </div>
+  <div>
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
