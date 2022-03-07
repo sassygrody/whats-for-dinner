@@ -1,8 +1,11 @@
 <div id="<%= dom_id food_item %>" data-sort-target=​"sortElement" data-sort-value=​"​​#{food_item.name}​​">
   <div class="<%=food_item_classes(food_item)%>">
-    <%= food_item.name %><%= fa_icon icon(food_item)%>
-    <%= link_to edit_food_item_path(food_item), data: { turbo_frame: 'modal' } do %>
-      <%= fa_icon "edit"%>
+    <%= food_item.name %>
+    <div class='mx-2'><%= fa_icon icon(food_item)%></div>
+    <% if editable %>
+      <%= link_to edit_food_item_path(food_item), data: { turbo_frame: 'modal' } do %>
+        <%= fa_icon "edit"%>
+      <% end %>
     <% end %>
   </div>
 </div>

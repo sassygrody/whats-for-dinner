@@ -23,7 +23,7 @@ class FoodItemsController < ApplicationController
         format.turbo_stream do
           section = @food_item.refrigerated? ? "fridge" : "pantry"
           render turbo_stream: turbo_stream.prepend(section, partial: "food_items/food_item",
-                                                             locals: { food_item: @food_item })
+                                                             locals: { food_item: @food_item, editable: true })
         end
         format.html { redirect_to food_item_url(@food_item), notice: "food item was successfully created." }
       else
@@ -38,7 +38,7 @@ class FoodItemsController < ApplicationController
       if @food_item.update(food_item_params)
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace(@food_item, partial: "food_items/food_item",
-                                                                locals: { food_item: @food_item })
+                                                                locals: { food_item: @food_item, editable: true })
         end
         format.html { redirect_to food_item_url(@food_item), notice: "food_item was successfully updated." }
         format.json { render :show, status: :ok, location: @food_item }

@@ -1,20 +1,15 @@
-<div>
-  <header>
-    <h5>
-      <%= daily_plan.date.strftime("%A %m/%d/%y") %>
-    </h5>
-  </header>
+<div class='meal sm:w-1/2 md:w-1/3 pr-4 pb-8'>
+  <h5>
+    <%= daily_plan.date.strftime("%A %m/%d/%y") %>
+  </h5>
   <div>
     <% daily_plan.meals.each do |meal|%>
       <h6 class="uppercase"><%= meal.name %></h6>
       <div class='flex'>
         <% meal.food_items.each do |food_item| %>
-          <div class="<%=food_item_classes(food_item)%> ">
-            <%= food_item.name %><%= fa_icon icon(food_item)%>
-          </div>
+          <%= render "food_item", {food_item: food_item, editable: false} %>
         <% end %>
       </div>
-      <hr/>
     <% end %>
   </div>
 </div>
