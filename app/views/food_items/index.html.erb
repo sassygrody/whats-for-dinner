@@ -1,12 +1,5 @@
 <div class='flex flex-col justify-around w-full h-screen p-8'>
-  <section class='bg-white p-4 h-3/4 overflow-scroll'>
-    <h3>Weekly Meals</h3>
-    <div class='meals-list flex flex-wrap'>
-      <% DailyPlan.all.each do |daily_plan|%>
-        <%= render "components/card", daily_plan: daily_plan %>
-      <% end %>
-    </div>
-  </section>
+  <%= render "meals/meals_list" %>
   <section class='bg-white p-4 h-1/4 overflow-scroll mt-8'>
     <%= render "kitchen" %>
   </section>
