@@ -14,7 +14,8 @@ class FoodItemsController < ApplicationController
     @food_item = FoodItem.new
   end
 
-  # POST /food_items or /food_items.json
+  def edit; end
+
   def create
     @food_item = FoodItem.new(food_item_params)
     respond_to do |format|
@@ -25,6 +26,25 @@ class FoodItemsController < ApplicationController
                                                              locals: { food_item: @food_item })
         end
         format.html { redirect_to food_item_url(@food_item), notice: "food item was successfully created." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @food_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @food_item.update(food_item_params)
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(@food_item, partial: "food_items/food_item",
+                                                                locals: { food_item: @food_item })
+        end
+        format.html { redirect_to food_item_url(@food_item), notice: "food_item was successfully updated." }
+        format.json { render :show, status: :ok, location: @food_item }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @food_item.errors, status: :unprocessable_entity }
       end
     end
   end
